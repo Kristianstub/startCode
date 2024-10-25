@@ -1,0 +1,21 @@
+ERROR:root:Error sending data: No connection adapters were found for '127.0.0.1:5000'
+ERROR:root:Error sending data: No connection adapters were found for '172.16.0.55:5000'
+ERROR:root:Error sending data: 404 Client Error: NOT FOUND for url: http://172.16.0.55:5000/
+ERROR:root:Error sending data: HTTPConnectionPool(host='gruppe10.codexenmo.no', port=80): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000017DFFFCA6D0>, 'Connection to gruppe10.codexenmo.no timed out. (connect timeout=None)'))
+ERROR:root:Error sending data: 404 Client Error: NOT FOUND for url: http://172.16.0.55:5000/receieve_data
+ERROR:root:Error sending data: Invalid URL 'gruppe10.codexenmono': No scheme supplied. Perhaps you meant https://gruppe10.codexenmono?
+ERROR:root:Error sending data: Invalid URL 'gruppe10.codexenmo.no': No scheme supplied. Perhaps you meant https://gruppe10.codexenmo.no?
+ERROR:root:Error sending data: HTTPSConnectionPool(host='gruppe10.codexenmo.no', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000020DFE9CA710>, 'Connection to gruppe10.codexenmo.no timed out. (connect timeout=None)'))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='gruppe10.codexenmo.no', port=5000): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001DBE42DA790>, 'Connection to gruppe10.codexenmo.no timed out. (connect timeout=None)'))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1006)')))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1006)')))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1006)')))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1006)')))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: / (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1006)')))
+ERROR:root:Error sending data: HTTPSConnectionPool(host='gruppe10.codexenmo.no', port=5000): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001DDC3FCA790>, 'Connection to gruppe10.codexenmo.no timed out. (connect timeout=None)'))
+ERROR:root:Error sending data: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/
+INFO:root:Data sent successfully at {'status': 'success'}
+ERROR:root:Error sending data: HTTPSConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /receive_data (Caused by SSLError(SSLError(1, '[SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1006)')))
+ERROR:root:Error sending data: Invalid URL 'http:gruppe10.codexenmo.no:5000/receive_data': No host supplied
+ERROR:root:Error sending data: HTTPConnectionPool(host='gruppe10.codexenmo.no', port=5000): Max retries exceeded with url: /receive_data (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000021F95586150>, 'Connection to gruppe10.codexenmo.no timed out. (connect timeout=None)'))
+INFO:root:Data sent successfully at {'status': 'success'}
