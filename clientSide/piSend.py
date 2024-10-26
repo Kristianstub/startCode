@@ -27,7 +27,7 @@ data = {
 
 try:
     response = requests.post(
-        "http://gruppe10.codexenmo.no:5000/receive_data",
+        "http://gruppe10.codexenmo.no/receive_data",
         json=data,
 
         verify=True  # Ensure SSL verification
