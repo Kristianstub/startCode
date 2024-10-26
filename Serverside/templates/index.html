@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Raspberry Pi Devices</h1>
+<table id="devices-table" class="display">
+    <thead>
+        <tr>
+            <th>Pi ID</th>
+            <th>MAC Address</th>
+            <th>Last Seen</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for device in devices %}
+        <tr>
+            <td>{{ device.pi_id }}</td>
+            <td><a href="{{ url_for('device_logs', mac_address=device.mac_address) }}">{{ device.mac_address }}</a></td>
+            <td>{{ device.last_seen }}</td>
+            <td>{{ device.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Device Status</h2>
+<canvas id="online-chart" width="400" height="200"></canvas>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#devices-table').DataTable();
+
+        // Fetch data for the online devices chart
+        $.getJSON("{{ url_for('online_devices') }}", function(data) {
+            var ctx = document.getElementById('online-chart').getContext('2d');
+            var onlineChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        data: data.counts,
+                        backgroundColor: ['#4CAF50', '#F44336']
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
