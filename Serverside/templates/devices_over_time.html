@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Devices Over Time</h1>
+<canvas id="devices-over-time-chart" width="800" height="400"></canvas>
+<a href="{{ url_for('index') }}">Back to Devices</a>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        // Fetch data for the devices over time chart
+        $.getJSON("{{ url_for('api_devices_over_time') }}", function(data) {
+            var ctx = document.getElementById('devices-over-time-chart').getContext('2d');
+            var devicesOverTimeChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.timestamps,
+                    datasets: [{
+                        label: 'Number of Devices',
+                        data: data.device_counts,
+                        borderColor: '#3e95cd',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            type: 'time',
+                            time: {
+                                parser: 'YYYY-MM-DD',
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'YYYY-MM-DD'
+                                }
+                            }
+                        }]
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

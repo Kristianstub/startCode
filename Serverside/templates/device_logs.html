@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Last 10 Logs for {{ device.pi_id }} ({{ device.mac_address }})</h1>
+<table id="logs-table" class="display">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>CPU Usage (%)</th>
+            <th>Temperature (°C)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.cpu_usage }}</td>
+            <td>{{ log.temperature }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('index') }}">Back to Devices</a>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('#logs-table').DataTable();
+    });
+</script>
+{% endblock %}
